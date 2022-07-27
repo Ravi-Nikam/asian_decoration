@@ -1,0 +1,197 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-image: url('images/i2.jpg');">
+<!-- MAIN (Center website) -->
+<div id="wrapper">
+  <div id="header">
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+      <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+      <a href="registration.html" style="float: right; margin-right:25px; "><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>    
+    <!-- End Navigation bar -->
+
+	<!-- Registration and login -->
+
+		<div class="login-reg-panel" style="margin-top: 300px;">
+		<div class="login-info-box">
+			<h2>Have an account?</h2>
+			<p>You are not Register User so Register Your Details than Login With Your Username and  Password.To Click Below..,</p>
+			<label id="label-register" for="log-reg-show">Login</label>
+			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
+		</div>
+							
+		<div class="register-info-box">
+			<h2>Don't have an account?</h2>
+			<p>A registered user is a user of a website, program, or other system who has previously registered. Registered users normally provide some sort of credentials (such as a username or e-mail address, and a password) to the system in order to prove their identity: this is known as logging in.For Register To Click Below..,</p>
+			<label id="label-login" for="log-login-show">Register</label>
+			<input type="radio" name="active-log-panel" id="log-login-show">
+		</div>
+							
+		<div class="white-panel">
+			<div class="login-show">
+				<h2><center><img src="{% static 'images/app_logo.png' %}" height="140px"></center></h2>
+				<form method="POST" action="#">
+					
+					<div class="input-container">
+						<i class="fa fa-user icon"></i>
+						<input type="text" class="input-field" placeholder="Enter Username...">	
+					</div>
+					
+					<div class="input-container">
+						<i class="fa fa-key icon"></i>
+						<input type="password" class="input-field" placeholder="Enter Password...">	
+					</div>
+					
+					<input type="submit" class="btn" value="Login">
+					<a href="">Forgot password?</a>	
+
+				</form>
+				
+			</div>
+			<div class="register-show">
+				<h2><center><img src="{% static 'images/app_logo.png' %}" height="100px"></center></h2>
+				<form method="POST" action="index.html">
+					
+					<div class="input-container">
+						<i class="fa fa-user icon"></i>
+						<input type="text" placeholder="Enter Username...">
+					</div>
+					
+					<div class="input-container">
+						<i class="fa fa-envelope icon" style="margin-top: 22px;"></i>
+						<input type="email" name="email" placeholder="Enter Email Id...">	
+					</div>
+					
+					<div class="input-container">
+						<i class="fa fa-key icon"></i>
+						<input type="password" placeholder="Enter Password...">
+					</div>
+
+					<div class="input-container">
+						<i class="fa fa-key icon"></i>
+						<input type="password" placeholder="Enter Confirm Password...">
+					</div>
+
+					<input type="submit" value="Register">	
+				</form>
+				
+			</div>
+		</div>
+	</div>
+	<!-- End Registraiton and login -->
+
+        <!-- footer area -->
+      <div class="footer-main-div">
+        <div class="footer-social-icons">
+          <ul>
+            <li><a href="#" target="blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-menu-one">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="#">New Release Product</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Packages</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-menu-two">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Asian Decker's</a></li>
+            <li><a href="#">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- bottom footer -->
+        <!-- <div class="footer-bottom">
+          <p>Design By: <a href="#">Jay Ravi Mayur</a></p>
+        </div> -->
+        <!-- end bottom footer -->
+
+      
+      <!-- End Footer area -->  
+
+</div>
+</div>
+<script type="text/javascript" src="js/main.js" >
+</script>
+
+		
+		  <script>
+    $(document).ready(function(){
+    $('.login-info-box').fadeOut();
+    $('.login-show').addClass('show-log-panel');
+});
+
+
+$('.login-reg-panel input[type="radio"]').on('change', function() {
+    if($('#log-login-show').is(':checked')) {
+        $('.register-info-box').fadeOut(); 
+        $('.login-info-box').fadeIn();
+        
+        $('.white-panel').addClass('right-log');
+        $('.register-show').addClass('show-log-panel');
+        $('.login-show').removeClass('show-log-panel');
+        
+    }
+    else if($('#log-reg-show').is(':checked')) {
+        $('.register-info-box').fadeIn();
+        $('.login-info-box').fadeOut();
+        
+        $('.white-panel').removeClass('right-log');
+        
+        $('.login-show').addClass('show-log-panel');
+        $('.register-show').removeClass('show-log-panel');
+    }
+});
+</script>
+<div >
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

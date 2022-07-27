@@ -1,0 +1,145 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- MAIN (Center website) -->
+<div id="wrapper">
+  <div id="header">
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+      <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+      <a href="Regis/registration" style="float: right; margin-right:25px; "><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>    
+    <!-- End Navigation bar -->
+			
+    <div >
+      <img src="{% static 'images/i2.jpg' %}" alt="banner-image" height="750px" width="1333px" style="padding-top: 2px;">
+	     <div class="container1">
+	       <span class="text1">Welcome to </span>
+	       <span class="text2">Asian Decker's</span>
+	     </div>
+    </div>
+
+  </br>
+    <div id="heading-block">
+        <h2 style="color: white; background-color: black; margin: 12px;">CATEGORY</h2>
+    </div>
+    {% for x in cate %}
+  <div class="row">
+    <div class="column" >
+      <div class="catbox"> 
+        <img  src="{{x.cat_img.url}}" alt="Snow" style="width:100%;">
+        <span>{{x.cname}}</span>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+
+    <div class="column">
+      <div class="catbox" style="background-color: #ffe34d;"> 
+        <span>Show More Category....</span>  
+      </div>
+    </div> 
+</div>
+  </br>
+    <div id="heading-block">
+        <h2 style="color: white; background-color: black; margin:12px;">PACKAGES</h2>
+    </div>
+<div class="columns">
+  <ul class="price">
+    <li class="header">Diamond</li>
+    <li class="grey">15,000,00</li>
+    <li>10GB Storage</li>
+    <li>10 Emails</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Golden</li>
+    <li class="grey">10,000,00</li>
+    <li>25GB Storage</li>
+    <li>25 Emails</li>
+    <li>25 Domains</li>
+    <li>2GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+<div class="columns">
+  <ul class="price">
+    <li class="header">Silver</li>
+    <li class="grey">5,000,00</li>
+    <li>50GB Storage</li>
+    <li>50 Emails</li>
+    <li>50 Domains</li>
+    <li>5GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+<div class="columns">
+  <video width="430" height="350" controls muted="true" autoplay="true">
+  <source src="{% static 'videos/Best Wedding.mp4' %}" type="video/mp4">
+</video>
+</div>
+
+<div class="columns" style="padding-left: 453px;" >
+  <video width="430" height="350" controls muted="true" autoplay="true">
+    <source src="{% static 'videos/Wedding Decor.mp4' %}" type="video/mp4">
+  </video>
+</div>
+
+</div>
+<div>
+        <!-- footer area -->
+      <div class="footer-main-div">
+        <div class="footer-social-icons">
+          <ul>
+            <li><a href="#" target="blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" target="blank"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-menu-one">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="#">New Release Product</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Packages</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-menu-two">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Asian Decker's</a></li>
+            <li><a href="#">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- bottom footer -->
+        <!-- <div class="footer-bottom">
+          <p>Design By: <a href="#">Jay Ravi Mayur</a></p>
+        </div> -->
+        <!-- end bottom footer -->
+      <!-- End Footer area -->  
+</div>
+</div>
+<script type="text/javascript" src="{% static 'js/main.js' %}" ></script>
+<div >
+</div>
+</body>
+</html>
